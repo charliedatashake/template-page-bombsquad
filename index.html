@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gabarit de page, Bomb Squad Paris</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Gemunu+Libre:wght@200;400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ POLICE PROPRIETAIRE DU SITE (chargee depuis leur serveur) ============ */
+@font-face{
+  font-family:'WOK-STENCIL';
+  src:url('https://bombsquad.games/wp-content/themes/BS-Home/style/fonts/WOK-STENCIL.woff2') format('woff2'),
+      url('https://bombsquad.games/wp-content/themes/BS-Home/style/fonts/WOK-STENCIL.woff') format('woff');
+  font-weight:normal;font-style:normal;font-display:swap;
+}
+/* ============ DA BOMB SQUAD (relevee sur le theme BS-Home) ============ */
+:root{
+  --bs-rose:#D3105E;
+  --bs-jaune:#F3CF43;
+  --bs-orange:#FF8900;
+  --bs-noir:#221F20;
+  --bs-fond:#EEEEEE;
+  --bs-gris:#574E4D;
+  /* couleurs d'annotation datashake, volontairement distinctes du design client */
+  --ds-jaune:#FFFF7D;
+  --ds-bleu:#77B0ED;
+  --ds-kaki:#ADAC2F;
+  --ds-gris:#E8E8E8;
+  --ds-noir:#101010;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F7F7F7;font-family:'Inter',-apple-system,sans-serif;color:var(--ds-noir);}
+
+/* ============ BARRE D'OUTIL datashake ============ */
+.bar{position:sticky;top:0;z-index:500;background:#101010;color:#fff;padding:14px 24px;
+     display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;}
+.bar h1{font-family:'Inter';font-size:15px;font-weight:600;letter-spacing:-.01em;}
+.bar h1 span{opacity:.55;font-weight:400;}
+.legend{display:flex;flex-wrap:wrap;gap:7px;align-items:center;}
+.pill{font-size:9.5px;font-weight:700;letter-spacing:.04em;padding:3px 7px;border-radius:2px;
+      color:#101010;white-space:nowrap;}
+.p-ex{background:var(--ds-gris);} .p-re{background:var(--ds-kaki);}
+.p-no{background:var(--ds-jaune);} .p-va{background:var(--ds-bleu);}
+.p-co{background:#3A3A3A;color:#fff;}
+.toggle{display:flex;gap:8px;align-items:center;font-size:12px;}
+.toggle button{font-family:'Inter';font-size:11.5px;font-weight:600;cursor:pointer;
+  background:#fff;color:#101010;border:0;border-radius:4px;padding:7px 13px;}
+.toggle button.off{background:#3A3A3A;color:#fff;}
+
+/* ============ CADRE DE LA MAQUETTE ============ */
+.frame{max-width:1120px;margin:26px auto 60px;background:var(--bs-fond);
+       border-radius:8px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,.10);}
+.urlbar{background:#DEDEDE;padding:9px 14px;font-family:ui-monospace,Menlo,monospace;
+        font-size:11.5px;color:#555;border-bottom:1px solid #CCC;}
+
+/* ============ RENDU FIDELE AU SITE ============ */
+.site{font-family:'Gemunu Libre',sans-serif;color:#000;font-size:17px;line-height:1.45;}
+.topbar{background:#000;padding:14px 30px;display:flex;align-items:center;justify-content:space-between;}
+.topbar img{height:38px;}
+.topbar nav{display:flex;gap:22px;font-family:'Poppins';font-weight:700;font-size:11.5px;
+            letter-spacing:.06em;text-transform:uppercase;color:#fff;}
+.topbar nav a{color:#fff;text-decoration:none;}
+.topbar nav a.on{color:var(--bs-jaune);}
+.cta{display:inline-block;font-family:'Poppins';font-weight:700;font-size:12px;letter-spacing:.05em;
+     text-transform:uppercase;background:var(--bs-rose);color:#fff;padding:13px 26px;
+     text-decoration:none;border:0;border-radius:2px;cursor:pointer;}
+.cta.ghost{background:transparent;border:2px solid var(--bs-jaune);color:var(--bs-jaune);}
+.cta.ghost.dark{border-color:#000;color:#000;}
+
+.sec{padding:52px 46px;}
+.sec.dark{background:var(--bs-noir);color:#fff;}
+.sec.rose{background:var(--bs-rose);color:#fff;}
+.stencil{font-family:'WOK-STENCIL','Poppins',sans-serif;text-transform:uppercase;line-height:1.02;}
+h2.t{font-family:'Poppins',sans-serif;font-weight:900;text-transform:uppercase;font-size:27px;
+     letter-spacing:-.01em;line-height:1.1;margin-bottom:20px;}
+h3.st{font-family:'Poppins';font-weight:700;font-size:14px;text-transform:uppercase;
+       letter-spacing:.04em;margin-bottom:7px;}
+.sec p{margin-bottom:13px;max-width:78ch;}
+.hero{background:linear-gradient(180deg,#111 0%,#2a2325 100%),url('https://paris.bombsquad.games/wp-content/uploads/sites/2/2026/04/79_BombSquad.webp');
+      background-size:cover;background-position:center;background-blend-mode:multiply;
+      color:#fff;padding:70px 46px 60px;}
+.hero h1{font-family:'WOK-STENCIL','Poppins',sans-serif;text-transform:uppercase;
+         font-size:46px;line-height:1;letter-spacing:.01em;}
+.hero h1 em{font-style:normal;color:var(--bs-jaune);}
+.hero .kicker{font-family:'Poppins';font-weight:700;font-size:11.5px;letter-spacing:.14em;
+              text-transform:uppercase;color:var(--bs-rose);margin-bottom:14px;}
+.answer{background:#fff;border-left:5px solid var(--bs-rose);padding:24px 28px;margin:0;}
+.answer p{font-size:18px;line-height:1.5;margin:0;max-width:88ch;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.card{background:#fff;border-radius:6px;padding:20px 22px;}
+.sec.dark .card{background:#2E2A2B;}
+table.price{width:100%;border-collapse:collapse;background:#fff;font-size:16px;}
+table.price th{background:#000;color:#fff;font-family:'Poppins';font-weight:700;font-size:11px;
+   letter-spacing:.05em;text-transform:uppercase;padding:12px 14px;text-align:left;}
+table.price td{padding:11px 14px;border-bottom:1px solid #E4E4E4;}
+table.price td:first-child{font-family:'Poppins';font-weight:700;font-size:14px;}
+table.price .hl{color:var(--bs-rose);font-family:'Poppins';font-weight:700;}
+table.cmp{width:100%;border-collapse:collapse;background:#fff;font-size:16px;margin-top:14px;}
+table.cmp th{background:var(--bs-jaune);font-family:'Poppins';font-weight:700;font-size:11px;
+   letter-spacing:.05em;text-transform:uppercase;padding:11px 13px;text-align:left;}
+table.cmp td{padding:10px 13px;border-bottom:1px solid #E4E4E4;}
+.faq details{background:#fff;border-radius:6px;margin-bottom:9px;padding:15px 20px;}
+.faq summary{font-family:'Poppins';font-weight:700;font-size:15px;cursor:pointer;}
+.faq p{margin:11px 0 0;font-size:16px;}
+.logos{display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:center;
+       background:#fff;padding:26px;border-radius:6px;}
+.logos img{height:30px;filter:grayscale(1);opacity:.65;}
+.stars{color:var(--bs-jaune);font-size:19px;letter-spacing:2px;}
+.links a{display:inline-block;background:#fff;border:2px solid #000;padding:11px 18px;
+   margin:0 9px 9px 0;text-decoration:none;color:#000;font-family:'Poppins';
+   font-weight:700;font-size:12.5px;}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.timeline .step{background:#fff;color:#000;border-top:4px solid var(--bs-orange);padding:16px 16px;}
+.timeline .h{font-family:'Poppins';font-weight:900;font-size:20px;color:var(--bs-rose);}
+.formrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.formrow input,.sec textarea{width:100%;padding:12px;border:1px solid #CFCFCF;border-radius:4px;
+   font-family:'Inter';font-size:14px;}
+.codeblk{background:#101010;border-radius:6px;padding:20px 22px;overflow-x:auto;}
+.codeblk pre{font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.65;color:#E8E8E8;}
+.codeblk .k{color:var(--ds-bleu);} .codeblk .s{color:var(--ds-jaune);}
+.codeblk .p{color:rgba(232,232,232,.45);}
+.foot{background:#000;color:#fff;padding:32px 46px;font-size:15px;}
+.foot img{height:44px;margin-bottom:12px;}
+
+/* ============ COUCHE D'ANNOTATION ============ */
+.blk{position:relative;}
+body.notes .blk{outline:2px dashed rgba(16,16,16,.22);outline-offset:-2px;}
+.tags{display:none;position:absolute;top:8px;right:8px;z-index:40;gap:5px;}
+body.notes .tags{display:flex;}
+.note{display:none;background:#101010;color:#fff;padding:16px 22px;
+      font-family:'Inter';font-size:13px;line-height:1.55;}
+body.notes .note{display:block;}
+.note b{color:var(--ds-jaune);font-weight:600;}
+.note .q{display:block;margin-top:8px;color:rgba(255,255,255,.62);font-size:12px;}
+.note .q i{font-style:normal;color:rgba(255,255,255,.9);}
+.hint{max-width:1120px;margin:0 auto;padding:0 6px 18px;font-size:12.5px;color:#666;}
+@media(max-width:900px){
+  .grid3,.grid2,.timeline,.formrow{grid-template-columns:1fr;}
+  .hero h1{font-size:32px;} h2.t{font-size:25px;} .sec{padding:34px 22px;}
+  .topbar nav{display:none;}
+}
+</style>
+</head>
+<body class="notes">
+
+<div class="bar">
+  <h1>Gabarit de page, Bomb Squad Paris <span>&nbsp;/&nbsp; datashake, août 2026</span></h1>
+  <div class="legend">
+    <span class="pill p-ex">EXISTANT</span>
+    <span class="pill p-re">À RENFORCER</span>
+    <span class="pill p-no">NOUVEAU</span>
+    <span class="pill p-va">VARIABLE</span>
+    <span class="pill p-co">CONDITIONNEL</span>
+  </div>
+  <div class="toggle">
+    <button id="tg" onclick="document.body.classList.toggle('notes');
+      this.textContent=document.body.classList.contains('notes')?'Masquer les annotations':'Afficher les annotations';
+      this.className=document.body.classList.contains('notes')?'':'off';">Masquer les annotations</button>
+  </div>
+</div>
+
+<p class="hint">Maquette de travail. Le rendu reprend la charte du site (couleurs, polices et images du thème BS-Home).
+Les textes sont des exemples destinés à montrer le niveau de précision attendu, pas une version validée.</p>
+
+<div class="frame">
+<div class="urlbar">https://paris.bombsquad.games/team-building/</div>
+<div class="site">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2023/05/LOGO_HEADER_ACTIF.png" alt="Bomb Squad Paris">
+    <nav>
+      <a href="#">Le concept</a><a href="#" class="on">Team building</a><a href="#">Anniversaire</a>
+      <a href="#">Tarifs</a><a href="#">FAQ</a>
+    </nav>
+    <a href="#devis" class="cta">Demander un devis</a>
+  </div>
+
+  <!-- 1. HERO -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-re">À RENFORCER</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="hero">
+      <div class="kicker">Action game, Paris 3e</div>
+      <h1>Team building à Paris,<br>l'action game qui fait<br>jouer <em>toute l'équipe</em></h1>
+      <p style="margin:18px 0 22px;font-size:19px;max-width:60ch;">Une heure pour désamorcer la bombe, de 2 à 60 personnes, à deux pas de Châtelet.</p>
+      <a href="#devis" class="cta">Demander un devis</a>
+      <a href="#concept" class="cta ghost" style="margin-left:10px;">Voir le concept</a>
+    </div>
+    <div class="note">
+      <b>Bloc 1, titre et accroche.</b> Le H1 actuel, « Le Team Building le Plus Immersif de Paris », repose sur un mot que personne ne recherche.
+      La règle est l'occasion et la ville d'abord, la promesse ensuite. À prévoir aussi, une balise title de 60 caractères et une meta description, aujourd'hui absente.
+      <span class="q">Questions visées : <i>Quelles sont les meilleures activités de team building à Paris ?</i> (2 900 rech./mois) &nbsp;·&nbsp; <i>Où organiser un team building à Paris ?</i></span>
+    </div>
+  </section>
+
+  <!-- 2. REPONSE DIRECTE -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-no">NOUVEAU</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="sec" style="padding-bottom:0;">
+      <div class="answer">
+        <p>Bomb Squad est un action game de tir à la bombe de peinture situé au 94 boulevard de Sébastopol, Paris 3e.
+        Une session dure une heure et accueille de 2 à 60 personnes, de 28 à 45 euros par personne selon la taille de l'équipe.
+        Le lieu se privatise et dispose d'un espace de réception de 80 m2 avec bar à thème.</p>
+      </div>
+    </div>
+    <div class="note">
+      <b>Bloc 2, réponse directe. C'est le bloc qui n'existe pas aujourd'hui et celui qui change le plus la donne.</b>
+      Quarante à soixante mots, placés avant tout visuel, avec les chiffres, durée, effectif, prix, quartier.
+      Aucun superlatif, aucune accroche. Ce bloc n'est pas écrit pour séduire, il est écrit pour être recopié tel quel par un moteur IA.
+      <span class="q">Sert tous les prompts de la page. C'est le bloc GEO central.</span>
+    </div>
+  </section>
+
+  <!-- 3. CONCEPT -->
+  <section class="blk" id="concept">
+    <div class="tags"><span class="pill p-ex">EXISTANT</span></div>
+    <div class="sec dark">
+      <h2 class="t">Une heure pour désamorcer la bombe</h2>
+      <div class="grid3">
+        <div class="card"><h3 class="st" style="color:var(--bs-jaune)">1. Le briefing</h3>
+          <p style="font-size:16px;">Cinq minutes pour comprendre la mission et former les équipes.</p></div>
+        <div class="card"><h3 class="st" style="color:var(--bs-jaune)">2. La mission</h3>
+          <p style="font-size:16px;">Quarante minutes de jeu, des épreuves de tir, d'agilité et de logique à enchaîner.</p></div>
+        <div class="card"><h3 class="st" style="color:var(--bs-jaune)">3. Le débrief</h3>
+          <p style="font-size:16px;">Le score par équipe, le podium, et un verre au bar à thème.</p></div>
+      </div>
+    </div>
+    <div class="note">
+      <b>Bloc 3, le concept.</b> Déjà en place sur la page, on le garde tel quel. Il répond à la question la plus posée sur la marque.
+      <span class="q">Questions visées : <i>Bomb Squad Paris, c'est quoi exactement ?</i> &nbsp;·&nbsp; <i>Combien de temps dure Bomb Squad ?</i></span>
+    </div>
+  </section>
+
+  <!-- 4. CE N'EST PAS UN ESCAPE GAME -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-no">NOUVEAU</span><span class="pill p-co">CONDITIONNEL</span></div>
+    <div class="sec">
+      <h2 class="t">Un action game, pas un escape game</h2>
+      <p>Bomb Squad est un action game. On ne cherche pas d'indices dans une pièce fermée, on se déplace, on tire et on marque des points.
+      Il n'y a aucune énigme à résoudre, ce qui en fait une activité accessible à une équipe entière, y compris à ceux qui n'aiment pas les escape games.</p>
+      <table class="cmp">
+        <tr><th></th><th>Escape game</th><th>Bomb Squad</th></tr>
+        <tr><td><b>Ce qu'on fait</b></td><td>Chercher des indices, résoudre des énigmes</td><td>Se déplacer, tirer, marquer des points</td></tr>
+        <tr><td><b>Effort physique</b></td><td>Faible</td><td>Réel, on se dépense</td></tr>
+        <tr><td><b>Taille du groupe</b></td><td>4 à 6 joueurs par salle</td><td>Jusqu'à 60 personnes par créneau</td></tr>
+      </table>
+    </div>
+    <div class="note">
+      <b>Bloc 4, la désambiguïsation.</b> Google classe aujourd'hui Bomb Squad en escape game alors que ce n'en est pas un, point soulevé par David au launch call.
+      Ce bloc corrige la catégorisation et capte au passage la recherche sur les escape games, qui pèse beaucoup plus lourd que celle sur les action games.
+      À n'activer que sur les pages où la question se pose, pas sur une page pot de départ.
+      <span class="q">Questions visées : <i>Bomb Squad est-il un escape game ?</i> &nbsp;·&nbsp; <i>Escape game ou action game, quelle différence ?</i> &nbsp;·&nbsp; <i>Quel escape game sans énigmes à Paris ?</i> &nbsp;·&nbsp; <i>Qu'est-ce qu'un action game et où en faire à Paris ?</i> (210)</span>
+    </div>
+  </section>
+
+  <!-- 5. POURQUOI NOUS -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-ex">EXISTANT</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="sec" style="background:#E4E4E4;">
+      <h2 class="t">Pourquoi Bomb Squad pour votre team building</h2>
+      <div class="grid3">
+        <div class="card"><h3 class="st" style="color:var(--bs-rose)">Accessible à tous</h3><p style="font-size:16px;">Aucune condition physique, aucune énigme. Personne ne reste sur le banc.</p></div>
+        <div class="card"><h3 class="st" style="color:var(--bs-rose)">Vraie cohésion</h3><p style="font-size:16px;">On joue en équipes de cinq ou six, avec un score commun.</p></div>
+        <div class="card"><h3 class="st" style="color:var(--bs-rose)">Clé en main</h3><p style="font-size:16px;">Encadrement, matériel, vestiaires et bar. Vous arrivez, on gère.</p></div>
+        <div class="card"><h3 class="st" style="color:var(--bs-rose)">Au coeur de Paris</h3><p style="font-size:16px;">Paris 3e, à cinq minutes à pied de Châtelet et de Réaumur Sébastopol.</p></div>
+        <div class="card"><h3 class="st" style="color:var(--bs-rose)">Sur mesure</h3><p style="font-size:16px;">Créneaux, rotations et privatisation adaptés à votre effectif.</p></div>
+        <div class="card"><h3 class="st" style="color:var(--bs-rose)">Mémorable</h3><p style="font-size:16px;">Une activité dont l'équipe reparle, pas un énième atelier.</p></div>
+      </div>
+    </div>
+    <div class="note">
+      <b>Bloc 5, la différenciation.</b> Le bloc existe, on garde la forme en six cartes. C'est le contenu des six raisons qui change d'une occasion à l'autre.
+      <span class="q">Questions visées : <i>Quel team building original pour marquer les esprits ?</i> (390) &nbsp;·&nbsp; <i>Quelle idée de team building original ?</i> (880)</span>
+    </div>
+  </section>
+
+  <!-- 6. FORMATS ET PRIX -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-re">À RENFORCER</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="sec">
+      <h2 class="t">Formats, capacités et tarifs</h2>
+      <table class="price">
+        <tr><th>Taille de l'équipe</th><th>Durée</th><th>Prix par personne</th></tr>
+        <tr><td>2 joueurs</td><td>1 heure</td><td class="hl">45 &euro;</td></tr>
+        <tr><td>3 joueurs</td><td>1 heure</td><td class="hl">40 &euro;</td></tr>
+        <tr><td>4 joueurs</td><td>1 heure</td><td class="hl">35 &euro;</td></tr>
+        <tr><td>5 joueurs</td><td>1 heure</td><td class="hl">30 &euro;</td></tr>
+        <tr><td>6 joueurs et plus</td><td>1 heure</td><td class="hl">28 &euro;</td></tr>
+        <tr><td>Groupe de 20 à 60</td><td>2 heures avec rotations</td><td class="hl">Sur devis</td></tr>
+      </table>
+      <p style="margin-top:14px;font-size:15px;color:var(--bs-gris);">Privatisation totale possible. Espace de réception de 80 m2 avec bar à thème inclus.</p>
+    </div>
+    <div class="note">
+      <b>Bloc 6, les chiffres.</b> Ils existent aujourd'hui, mais uniquement dans la mise en page et dans des visuels.
+      Un tableau en texte est extractible par un moteur, une infographie ne l'est pas. C'est la seule différence, et elle est décisive.
+      <span class="q">Questions visées : <i>Combien coûte Bomb Squad par personne ?</i> &nbsp;·&nbsp; <i>Combien de joueurs maximum chez Bomb Squad ?</i> &nbsp;·&nbsp; <i>Combien coûte un team building à Paris par personne ?</i> (590) &nbsp;·&nbsp; <i>Quelle activité pour un groupe de 50 personnes à Paris ?</i></span>
+    </div>
+  </section>
+
+  <!-- 7. DEROULE -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-ex">EXISTANT</span><span class="pill p-co">CONDITIONNEL</span></div>
+    <div class="sec dark">
+      <h2 class="t">Un créneau de 2 heures pour 40 personnes</h2>
+      <div class="timeline">
+        <div class="step"><div class="h">18h30</div><p style="font-size:15px;">Accueil, vestiaires, verre de bienvenue au bar.</p></div>
+        <div class="step"><div class="h">18h45</div><p style="font-size:15px;">Briefing collectif, constitution des équipes.</p></div>
+        <div class="step"><div class="h">19h00</div><p style="font-size:15px;">Deux rotations de jeu, 40 minutes chacune.</p></div>
+        <div class="step"><div class="h">20h20</div><p style="font-size:15px;">Podium, remise des scores, temps libre au bar.</p></div>
+      </div>
+    </div>
+    <div class="note">
+      <b>Bloc 7, le déroulé.</b> Il rassure celui qui organise, en montrant le minutage. À désactiver sur les pages courtes, un anniversaire ado par exemple.
+      <span class="q">Questions visées : <i>Je dois organiser un team building pour 30 personnes à Paris, des idées ?</i> &nbsp;·&nbsp; <i>Comment organiser une soirée d'équipe sans se prendre la tête ?</i></span>
+    </div>
+  </section>
+
+  <!-- 8. LE LIEU -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-re">À RENFORCER</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="sec">
+      <h2 class="t">Le lieu</h2>
+      <div class="grid2">
+        <div>
+          <p><b>94 boulevard de Sébastopol, 75003 Paris.</b></p>
+          <p>Métro Réaumur Sébastopol (lignes 3 et 4) à 2 minutes à pied, Châtelet (1, 4, 7, 11, 14) à 6 minutes,
+          République à 12 minutes. En plein Marais, côté 3e arrondissement.</p>
+          <p>Sur place, une salle de jeu et un espace de réception de 80 m2 avec bar à thème,
+          privatisable pour l'après-jeu.</p>
+          <p style="color:var(--bs-rose);font-family:'Poppins';font-weight:700;font-size:14px;">Horaires d'ouverture, à compléter avec le client</p>
+        </div>
+        <div><img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2026/04/105_BombSquad-768x512.jpg"
+             alt="Espace de réception Bomb Squad Paris" style="width:100%;border-radius:6px;"></div>
+      </div>
+    </div>
+    <div class="note">
+      <b>Bloc 8, l'ancrage local.</b> Aujourd'hui l'adresse et le métro ne sont pas exploitables sur la page, et les horaires ne sont publiés nulle part sur le site.
+      Ce sont les questions de proximité qui sont les plus faciles à gagner pour une marque encore peu connue, parce que la concurrence y est locale et non nationale.
+      <span class="q">Questions visées : <i>Quelle activité près de Châtelet ou République ?</i> &nbsp;·&nbsp; <i>Quelle activité dans le Marais ou le 3e arrondissement ?</i> &nbsp;·&nbsp; <i>Où se trouve Bomb Squad à Paris et quel métro ?</i></span>
+    </div>
+  </section>
+
+  <!-- 9. PREUVES -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-ex">EXISTANT</span></div>
+    <div class="sec" style="background:#E4E4E4;">
+      <h2 class="t">Ils nous font confiance</h2>
+      <div class="logos">
+        <img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2026/04/Accor_Logo.png" alt="Accor">
+        <img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2026/04/Allianz-logo-.png" alt="Allianz">
+        <img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2026/04/Logo_TF1_2013.svg.png" alt="TF1">
+        <img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2026/04/EDF-logo.png" alt="EDF">
+        <img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2026/04/Louis_Vuitton_logo_and_wordmark.svg.png" alt="Louis Vuitton">
+      </div>
+      <div class="grid2" style="margin-top:18px;">
+        <div class="card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p style="font-size:16px;margin-top:8px;">« Toute l'équipe a joué, même ceux qui traînaient les pieds. On en parle encore trois mois après. »</p>
+          <p style="font-size:14px;color:var(--bs-gris);margin:0;">Responsable RH, équipe de 35 personnes</p></div>
+        <div class="card"><h3 class="st">Vu dans Capital sur M6</h3>
+          <p style="font-size:16px;">Le concept a fait l'objet d'un reportage dans l'émission Capital.</p></div>
+      </div>
+    </div>
+    <div class="note">
+      <b>Bloc 9, les preuves.</b> Déjà en place. C'est ce que les moteurs recoupent avant de recommander un lieu, avis, témoignages, présence dans la presse.
+      À compléter par l'URL du reportage Capital, à récupérer côté client.
+      <span class="q">Questions visées : <i>Avis Bomb Squad Paris</i> &nbsp;·&nbsp; <i>Quelles sont les activités de groupe les mieux notées à Paris ?</i></span>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-re">À RENFORCER</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="sec faq">
+      <h2 class="t">Questions fréquentes</h2>
+      <details open><summary>Bomb Squad est-il un escape game ?</summary>
+        <p>Non. Bomb Squad est un action game. Il n'y a aucune énigme à résoudre, le jeu repose sur le déplacement, le tir et le score.
+        C'est ce qui le rend accessible à une équipe entière.</p></details>
+      <details><summary>Combien coûte Bomb Squad par personne ?</summary>
+        <p>De 28 à 45 euros par personne selon la taille de l'équipe, 45 euros à deux joueurs et 28 euros à partir de six.
+        Les groupes de 20 à 60 personnes sont sur devis.</p></details>
+      <details><summary>Combien de temps dure une session ?</summary>
+        <p>Une heure, briefing et débrief compris. Pour les groupes de plus de 20 personnes, nous organisons un créneau de deux heures avec rotations.</p></details>
+      <details><summary>Combien de personnes peut-on accueillir ?</summary>
+        <p>De 2 à 60 personnes sur un même créneau, avec des rotations par équipes de cinq ou six joueurs.</p></details>
+      <details><summary>À partir de quel âge peut-on jouer ?</summary>
+        <p>À compléter avec le client.</p></details>
+      <details><summary>Peut-on privatiser le lieu ?</summary>
+        <p>Oui. La salle de jeu et l'espace de réception de 80 m2 avec bar se privatisent, en semaine comme le week-end.</p></details>
+      <details><summary>Où se trouve Bomb Squad et quel métro ?</summary>
+        <p>Au 94 boulevard de Sébastopol, Paris 3e. Métro Réaumur Sébastopol à 2 minutes, Châtelet à 6 minutes.</p></details>
+      <details><summary>Faut-il réserver à l'avance ?</summary>
+        <p>À compléter avec le client.</p></details>
+    </div>
+    <div class="note">
+      <b>Bloc 10, la FAQ.</b> Elle existe déjà à l'écran mais elle n'est pas balisée, donc invisible pour les moteurs.
+      Deux règles, l'intitulé reprend le prompt tel qu'un utilisateur le pose, et la réponse se comprend seule, sans avoir lu le reste de la page, parce qu'un moteur peut l'extraire isolément.
+      <span class="q">Sert les dix prompts de marque de la roadmap. Balisage FAQPage obligatoire.</span>
+    </div>
+  </section>
+
+  <!-- 11. OCCASIONS VOISINES -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-no">NOUVEAU</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="sec links" style="background:#E4E4E4;">
+      <h2 class="t">Autres occasions</h2>
+      <a href="#">Séminaire d'entreprise</a><a href="#">Soirée d'entreprise</a>
+      <a href="#">Afterwork</a><a href="#">Anniversaire ado</a><a href="#">EVG</a>
+    </div>
+    <div class="note">
+      <b>Bloc 11, le maillage interne.</b> Trois à quatre liens vers les autres pages du gabarit, l'ancre est le nom de l'occasion.
+      Il fait circuler la popularité entre les pages et aide les moteurs à comprendre l'offre complète plutôt que de voir des pages isolées.
+      <span class="q">Ce bloc n'existe pas aujourd'hui, chaque page est un cul-de-sac.</span>
+    </div>
+  </section>
+
+  <!-- 12. CONVERSION -->
+  <section class="blk" id="devis">
+    <div class="tags"><span class="pill p-ex">EXISTANT</span><span class="pill p-va">VARIABLE</span></div>
+    <div class="sec rose">
+      <h2 class="t">Organisez votre team building</h2>
+      <p style="margin-bottom:20px;">Réponse sous 24 heures ouvrées, devis et facture au nom de votre société.</p>
+      <div style="background:#fff;padding:24px;border-radius:6px;max-width:640px;">
+        <div class="formrow"><input placeholder="Nom et prenom"><input placeholder="Société"></div>
+        <div class="formrow"><input placeholder="Email professionnel"><input placeholder="Nombre de participants"></div>
+        <div class="formrow"><input placeholder="Date souhaitée"><input placeholder="Téléphone"></div>
+        <button class="cta" style="width:100%;">Recevoir mon devis</button>
+      </div>
+    </div>
+    <div class="note">
+      <b>Bloc 12, la conversion.</b> Le formulaire existe. Ce qui change selon la page, c'est la promesse et les champs.
+      Devis, facture et délai de réponse côté entreprise. Réservation en ligne et prix par personne côté grand public.
+      <span class="q">Questions visées : <i>Où réserver un team building à Paris pour le mois prochain ?</i></span>
+    </div>
+  </section>
+
+  <!-- 13. DONNEES STRUCTUREES -->
+  <section class="blk">
+    <div class="tags"><span class="pill p-no">NOUVEAU</span></div>
+    <div class="sec dark">
+      <h2 class="t">Données structurées de la page</h2>
+      <p style="margin-bottom:16px;color:rgba(255,255,255,.75);">Bloc invisible pour le visiteur, placé dans le code de la page. C'est lui qui rend la page lisible par les moteurs.</p>
+      <div class="codeblk"><pre>{
+  <span class="k">"@context"</span><span class="p">:</span> <span class="s">"https://schema.org"</span><span class="p">,</span>
+  <span class="k">"@type"</span><span class="p">:</span> <span class="s">"Service"</span><span class="p">,</span>
+  <span class="k">"name"</span><span class="p">:</span> <span class="s">"Team building à Paris"</span><span class="p">,</span>
+  <span class="k">"serviceType"</span><span class="p">:</span> <span class="s">"Team building"</span><span class="p">,</span>
+  <span class="k">"provider"</span><span class="p">:</span> <span class="p">{</span> <span class="k">"@id"</span><span class="p">:</span> <span class="s">"https://paris.bombsquad.games/#localbusiness"</span> <span class="p">},</span>
+  <span class="k">"areaServed"</span><span class="p">:</span> <span class="s">"Paris"</span><span class="p">,</span>
+  <span class="k">"offers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="k">"@type"</span><span class="p">:</span> <span class="s">"AggregateOffer"</span><span class="p">,</span>
+    <span class="k">"lowPrice"</span><span class="p">:</span> <span class="s">"28"</span><span class="p">,</span> <span class="k">"highPrice"</span><span class="p">:</span> <span class="s">"45"</span><span class="p">,</span>
+    <span class="k">"priceCurrency"</span><span class="p">:</span> <span class="s">"EUR"</span>
+  <span class="p">}</span>
+}</pre></div>
+    </div>
+    <div class="note">
+      <b>Bloc 13, le balisage.</b> Aujourd'hui la page ne porte que WebPage et BreadcrumbList, aucun schema métier.
+      Trois blocs à poser sur chaque page du gabarit, FAQPage, Service et Offer. Le LocalBusiness, lui, se pose une seule fois sur la page d'accueil,
+      et toutes les pages y renvoient par leur identifiant.
+      <span class="q">Détail complet dans l'onglet « données structurées, actions » de l'audit technique.</span>
+    </div>
+  </section>
+
+  <div class="foot">
+    <img src="https://paris.bombsquad.games/wp-content/uploads/sites/2/2023/05/LOGO_FOOTER.png" alt="Bomb Squad">
+    <p style="font-size:15px;">94 boulevard de Sébastopol, 75003 Paris</p>
+  </div>
+
+</div>
+</div>
+
+<p class="hint" style="padding-bottom:50px;">
+Six blocs existants gardés tels quels, cinq blocs à renforcer, quatre blocs nouveaux.
+La page est construite sous Elementor, donc chaque nouvelle occasion est une duplication suivie d'un remplissage de textes, sans développement.
+Pages à décliner sur ce gabarit : séminaire d'entreprise (1 900 rech./mois), soirée d'entreprise (1 000), afterwork (1 000),
+action game à Paris (210), anniversaire ado (1 000), EVG (320).
+</p>
+
+</body>
+</html>
