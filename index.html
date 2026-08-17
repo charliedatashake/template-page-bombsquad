@@ -164,7 +164,8 @@ body.notes .note{display:block;}
 </div>
 
 <p class="hint">Maquette de travail. Le rendu reprend la charte du site (couleurs, polices et images du thème BS-Home).
-Les textes sont des exemples destinés à montrer le niveau de précision attendu, pas une version validée.</p>
+Les textes sont des exemples destinés à montrer le niveau de précision attendu, pas une version validée.
+<b>Recalée le 17 août 2026 sur la maquette de refonte du client</b> (bombsquad-redesign.replit.app), les annotations distinguent désormais ce que la refonte règle déjà et ce qui reste à intégrer.</p>
 
 <div class="frame">
 <div class="urlbar">https://paris.bombsquad.games/team-building/</div>
@@ -191,8 +192,9 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
       <a href="#concept" class="cta ghost" style="margin-left:10px;">Voir le concept</a>
     </div>
     <div class="note">
-      <b>Bloc 1, titre et accroche.</b> Le H1 actuel, « Le Team Building le Plus Immersif de Paris », repose sur un mot que personne ne recherche.
-      La règle est l'occasion et la ville d'abord, la promesse ensuite. À prévoir aussi, une balise title de 60 caractères et une meta description, aujourd'hui absente.
+      <b>Bloc 1, titre et accroche.</b> La refonte conserve « Le Team Building le Plus Immersif de Paris ». Le mot-clé et la ville y sont, c'est le seul H1 correct de la maquette refonte, il peut rester.
+      Notre version place l'occasion et la ville en tête et la promesse ensuite, au choix. La balise title et la meta description sont désormais en place dans la refonte (« Team Building Paris | Bomb Squad Paris »).
+      C'est cette règle du H1 unique avec occasion + ville qu'il faut répliquer sur les autres pages, où la refonte garde des accroches de marque sans sujet (anniversaire, EVG, bons cadeaux).
       <span class="q">Questions visées : <i>Quelles sont les meilleures activités de team building à Paris ?</i> (2 900 rech./mois) &nbsp;·&nbsp; <i>Où organiser un team building à Paris ?</i></span>
     </div>
   </section>
@@ -211,6 +213,7 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
       <b>Bloc 2, réponse directe. C'est le bloc qui n'existe pas aujourd'hui et celui qui change le plus la donne.</b>
       Quarante à soixante mots, placés avant tout visuel, avec les chiffres, durée, effectif, prix, quartier.
       Aucun superlatif, aucune accroche. Ce bloc n'est pas écrit pour séduire, il est écrit pour être recopié tel quel par un moteur IA.
+      Toujours absent de la maquette refonte (vérifié le 17/08), c'est la première demande d'intégration à passer.
       <span class="q">Sert tous les prompts de la page. C'est le bloc GEO central.</span>
     </div>
   </section>
@@ -252,6 +255,8 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
     <div class="note">
       <b>Bloc 4, la désambiguïsation.</b> Google classe aujourd'hui Bomb Squad en escape game alors que ce n'en est pas un, point soulevé par David au launch call.
       Ce bloc corrige la catégorisation et capte au passage la recherche sur les escape games, qui pèse beaucoup plus lourd que celle sur les action games.
+      Le mot escape game n'apparaît nulle part dans la maquette refonte, le bloc reste donc entier.
+      Règle actée, on assume le champ escape game parce que Bomb Squad peut être considéré comme tel. Le laser game reste cantonné au tableau comparatif, on n'en est pas un.
       À n'activer que sur les pages où la question se pose, pas sur une page pot de départ.
       <span class="q">Questions visées : <i>Bomb Squad est-il un escape game ?</i> &nbsp;·&nbsp; <i>Escape game ou action game, quelle différence ?</i> &nbsp;·&nbsp; <i>Quel escape game sans énigmes à Paris ?</i> &nbsp;·&nbsp; <i>Qu'est-ce qu'un action game et où en faire à Paris ?</i> (210)</span>
     </div>
@@ -296,6 +301,7 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
     <div class="note">
       <b>Bloc 6, les chiffres.</b> Ils existent aujourd'hui, mais uniquement dans la mise en page et dans des visuels.
       Un tableau en texte est extractible par un moteur, une infographie ne l'est pas. C'est la seule différence, et elle est décisive.
+      La refonte recule même sur ce point, elle ne publie plus aucun chiffre et sa FAQ répond « nos tarifs sont personnalisés ». Sans prix extractible, les moteurs citent ceux des concurrents.
       <span class="q">Questions visées : <i>Combien coûte Bomb Squad par personne ?</i> &nbsp;·&nbsp; <i>Combien de joueurs maximum chez Bomb Squad ?</i> &nbsp;·&nbsp; <i>Combien coûte un team building à Paris par personne ?</i> (590) &nbsp;·&nbsp; <i>Quelle activité pour un groupe de 50 personnes à Paris ?</i></span>
     </div>
   </section>
@@ -395,9 +401,10 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
         <p>À compléter avec le client.</p></details>
     </div>
     <div class="note">
-      <b>Bloc 10, la FAQ.</b> Elle existe déjà à l'écran mais elle n'est pas balisée, donc invisible pour les moteurs.
+      <b>Bloc 10, la FAQ.</b> La refonte la balise enfin en FAQPage, le socle technique est acquis.
+      Reste l'essentiel, passer de 4 ou 5 questions génériques à une dizaine calées sur les prompts monitorés, sans réponse évasive (la question prix de la refonte répond « tarifs personnalisés », un moteur n'en fait rien).
       Deux règles, l'intitulé reprend le prompt tel qu'un utilisateur le pose, et la réponse se comprend seule, sans avoir lu le reste de la page, parce qu'un moteur peut l'extraire isolément.
-      <span class="q">Sert les dix prompts de marque de la roadmap. Balisage FAQPage obligatoire.</span>
+      <span class="q">Sert les dix prompts de marque de la roadmap. Balisage FAQPage acquis dans la refonte.</span>
     </div>
   </section>
 
@@ -438,7 +445,7 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
 
   <!-- 13. DONNEES STRUCTUREES -->
   <section class="blk">
-    <div class="tags"><span class="pill p-no">NOUVEAU</span></div>
+    <div class="tags"><span class="pill p-re">À RENFORCER</span></div>
     <div class="sec dark">
       <h2 class="t">Données structurées de la page</h2>
       <p style="margin-bottom:16px;color:rgba(255,255,255,.75);">Bloc invisible pour le visiteur, placé dans le code de la page. C'est lui qui rend la page lisible par les moteurs.</p>
@@ -447,7 +454,7 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
   <span class="k">"@type"</span><span class="p">:</span> <span class="s">"Service"</span><span class="p">,</span>
   <span class="k">"name"</span><span class="p">:</span> <span class="s">"Team building à Paris"</span><span class="p">,</span>
   <span class="k">"serviceType"</span><span class="p">:</span> <span class="s">"Team building"</span><span class="p">,</span>
-  <span class="k">"provider"</span><span class="p">:</span> <span class="p">{</span> <span class="k">"@id"</span><span class="p">:</span> <span class="s">"https://paris.bombsquad.games/#localbusiness"</span> <span class="p">},</span>
+  <span class="k">"provider"</span><span class="p">:</span> <span class="p">{</span> <span class="k">"@id"</span><span class="p">:</span> <span class="s">"https://paris.bombsquad.games/#business"</span> <span class="p">},</span>
   <span class="k">"areaServed"</span><span class="p">:</span> <span class="s">"Paris"</span><span class="p">,</span>
   <span class="k">"offers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="k">"@type"</span><span class="p">:</span> <span class="s">"AggregateOffer"</span><span class="p">,</span>
@@ -457,9 +464,11 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
 }</pre></div>
     </div>
     <div class="note">
-      <b>Bloc 13, le balisage.</b> Aujourd'hui la page ne porte que WebPage et BreadcrumbList, aucun schema métier.
-      Trois blocs à poser sur chaque page du gabarit, FAQPage, Service et Offer. Le LocalBusiness, lui, se pose une seule fois sur la page d'accueil,
-      et toutes les pages y renvoient par leur identifiant.
+      <b>Bloc 13, le balisage.</b> La refonte pose déjà Service, FAQPage et BreadcrumbList sur cette page, et un LocalBusiness sur l'accueil. Le socle y est.
+      Deux corrections restent. L'établissement est déclaré trois fois de trois façons différentes (accueil, contact, team building), avec deux formats de téléphone et des horaires sur une seule page,
+      sans identifiant commun. Un moteur peut y lire trois établissements distincts. Le LocalBusiness complet se pose une seule fois sur l'accueil (identifiant #business, celui de la refonte),
+      toutes les pages y renvoient par cet identifiant. Et il manque au bloc principal les coordonnées geo, les horaires, une image et les liens sameAs (fiche Google, réseaux).
+      L'Offer manque aussi, la grille étant publique. En revanche pas d'aggregateRating sur les avis Google, Google interdit le balisage d'avis collectés ailleurs.
       <span class="q">Détail complet dans l'onglet « données structurées, actions » de l'audit technique.</span>
     </div>
   </section>
@@ -473,10 +482,11 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
 </div>
 
 <p class="hint" style="padding-bottom:50px;">
-Six blocs existants gardés tels quels, cinq blocs à renforcer, quatre blocs nouveaux.
-La page est construite sous Elementor, donc chaque nouvelle occasion est une duplication suivie d'un remplissage de textes, sans développement.
-Pages à décliner sur ce gabarit : séminaire d'entreprise (1 900 rech./mois), soirée d'entreprise (1 000), afterwork (1 000),
-action game à Paris (210), anniversaire ado (1 000), EVG (320).
+Cinq blocs existants gardés tels quels, cinq blocs à renforcer, trois blocs nouveaux (bilan recalé sur la maquette de refonte du 17/08).
+Les trois blocs encore absents de la refonte sont la réponse directe, la désambiguïsation escape game et le maillage entre occasions.
+Pages à décliner sur ce gabarit : soirée d'entreprise (à défendre, absorbée dans team-building par la refonte), séminaire d'entreprise (1 900 rech./mois),
+afterwork (1 000), activité insolite à Paris, anniversaire (créée par la refonte, à enrichir), EVG / EVJF (créée par la refonte, à enrichir).
+Le champ escape game se joue sur la home (désambiguïsation) et sur l'article alternatives existant du blog, à transformer en page pilier.
 </p>
 
 </body>
