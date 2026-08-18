@@ -165,7 +165,8 @@ body.notes .note{display:block;}
 
 <p class="hint">Maquette de travail. Le rendu reprend la charte du site (couleurs, polices et images du thème BS-Home).
 Les textes sont des exemples destinés à montrer le niveau de précision attendu, pas une version validée.
-<b>Recalée le 17 août 2026 sur la maquette de refonte du client</b> (bombsquad-redesign.replit.app), les annotations distinguent désormais ce que la refonte règle déjà et ce qui reste à intégrer.</p>
+<b>Recalée le 18 août 2026 sur la page réellement en ligne</b> (contrôle en direct de paris.bombsquad.games/team-building/). La maquette de refonte du client (bombsquad-redesign.replit.app) n'est pas déployée,
+les annotations décrivent donc l'état constaté en ligne, ce qui est déjà acquis, ce qui reste à intégrer, et ce que la refonte apporterait ou ferait perdre.</p>
 
 <div class="frame">
 <div class="urlbar">https://paris.bombsquad.games/team-building/</div>
@@ -193,7 +194,8 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
     </div>
     <div class="note">
       <b>Bloc 1, titre et accroche.</b> La refonte conserve « Le Team Building le Plus Immersif de Paris ». Le mot-clé et la ville y sont, c'est le seul H1 correct de la maquette refonte, il peut rester.
-      Notre version place l'occasion et la ville en tête et la promesse ensuite, au choix. La balise title et la meta description sont désormais en place dans la refonte (« Team Building Paris | Bomb Squad Paris »).
+      Notre version place l'occasion et la ville en tête et la promesse ensuite, au choix. Attention, la maquette de refonte annonce un title propre (« Team Building Paris | Bomb Squad Paris ») mais
+      <b>la page en ligne ne l'a pas</b> (vérifié le 18/08). Elle sert encore « Team Building - BOMB SQUAD PARIS », signalé en doublon dans l'audit, et <b>aucune meta description</b>. Deux champs Yoast à remplir, zéro rédaction.
       C'est cette règle du H1 unique avec occasion + ville qu'il faut répliquer sur les autres pages, où la refonte garde des accroches de marque sans sujet (anniversaire, EVG, bons cadeaux).
       <span class="q">Questions visées : <i>Quelles sont les meilleures activités de team building à Paris ?</i> (2 900 rech./mois) &nbsp;·&nbsp; <i>Où organiser un team building à Paris ?</i></span>
     </div>
@@ -319,7 +321,8 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
       </div>
     </div>
     <div class="note">
-      <b>Bloc 7, le déroulé.</b> Il rassure celui qui organise, en montrant le minutage. À désactiver sur les pages courtes, un anniversaire ado par exemple.
+      <b>Bloc 7, le déroulé.</b> Il rassure celui qui organise, en montrant le minutage. Bonne nouvelle, il existe déjà en ligne (créneau 2 heures, rotation des équipes, exemple de planning),
+      c'est un des blocs les mieux faits de la page. Point de vigilance, il <b>a disparu de la maquette de refonte</b>, il faut le préserver. À désactiver seulement sur les pages courtes, un anniversaire ado par exemple.
       <span class="q">Questions visées : <i>Je dois organiser un team building pour 30 personnes à Paris, des idées ?</i> &nbsp;·&nbsp; <i>Comment organiser une soirée d'équipe sans se prendre la tête ?</i></span>
     </div>
   </section>
@@ -343,7 +346,7 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
       </div>
     </div>
     <div class="note">
-      <b>Bloc 8, l'ancrage local.</b> Aujourd'hui l'adresse et le métro ne sont pas exploitables sur la page, et les horaires ne sont publiés nulle part sur le site.
+      <b>Bloc 8, l'ancrage local.</b> L'adresse est bien en ligne (94 boulevard de Sébastopol), c'est déjà ça. Manquent le métro, les horaires (publiés nulle part sur le site) et surtout la reprise de ces informations dans le balisage.
       Ce sont les questions de proximité qui sont les plus faciles à gagner pour une marque encore peu connue, parce que la concurrence y est locale et non nationale.
       <span class="q">Questions visées : <i>Quelle activité près de Châtelet ou République ?</i> &nbsp;·&nbsp; <i>Quelle activité dans le Marais ou le 3e arrondissement ?</i> &nbsp;·&nbsp; <i>Où se trouve Bomb Squad à Paris et quel métro ?</i></span>
     </div>
@@ -401,10 +404,11 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
         <p>À compléter avec le client.</p></details>
     </div>
     <div class="note">
-      <b>Bloc 10, la FAQ.</b> La refonte la balise enfin en FAQPage, le socle technique est acquis.
-      Reste l'essentiel, passer de 4 ou 5 questions génériques à une dizaine calées sur les prompts monitorés, sans réponse évasive (la question prix de la refonte répond « tarifs personnalisés », un moteur n'en fait rien).
+      <b>Bloc 10, la FAQ.</b> C'est le gain le plus rapide de toute la page. La FAQ existe déjà en ligne avec huit questions, mais elle n'est <b>balisée nulle part</b> (vérifié le 18/08, la page ne sort que le WebPage et le BreadcrumbList par défaut de Yoast).
+      Autrement dit le contenu est écrit et les moteurs ne le voient pas comme une FAQ. Le corriger ne demande aucune rédaction, juste du balisage.
+      Reste ensuite le fond, passer de huit questions génériques à une dizaine calées sur les prompts monitorés, sans réponse évasive (la question prix répond aujourd'hui « nos tarifs sont personnalisés », un moteur n'en fait rien).
       Deux règles, l'intitulé reprend le prompt tel qu'un utilisateur le pose, et la réponse se comprend seule, sans avoir lu le reste de la page, parce qu'un moteur peut l'extraire isolément.
-      <span class="q">Sert les dix prompts de marque de la roadmap. Balisage FAQPage acquis dans la refonte.</span>
+      <span class="q">Sert les dix prompts de marque de la roadmap. Balisage FAQPage à poser, aucun n'est présent en ligne.</span>
     </div>
   </section>
 
@@ -464,10 +468,11 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
 }</pre></div>
     </div>
     <div class="note">
-      <b>Bloc 13, le balisage.</b> La refonte pose déjà Service, FAQPage et BreadcrumbList sur cette page, et un LocalBusiness sur l'accueil. Le socle y est.
-      Deux corrections restent. L'établissement est déclaré trois fois de trois façons différentes (accueil, contact, team building), avec deux formats de téléphone et des horaires sur une seule page,
-      sans identifiant commun. Un moteur peut y lire trois établissements distincts. Le LocalBusiness complet se pose une seule fois sur l'accueil (identifiant #business, celui de la refonte),
-      toutes les pages y renvoient par cet identifiant. Et il manque au bloc principal les coordonnées geo, les horaires, une image et les liens sameAs (fiche Google, réseaux).
+      <b>Bloc 13, le balisage.</b> Le point le plus grave de la page, et le plus invisible. La maquette de refonte prévoit bien Service, FAQPage et LocalBusiness, mais
+      <b>rien de tout ça n'est en ligne</b> (vérifié le 18/08). La page ne sort que WebPage, BreadcrumbList et WebSite, c'est le strict défaut de Yoast, et l'accueil n'a aucun LocalBusiness.
+      À titre de comparaison, PAN Bar a déjà FAQPage et AggregateRating sur son accueil. Même client, deux niveaux de maturité.
+      Le LocalBusiness complet se pose une seule fois sur l'accueil (identifiant #business), toutes les pages y renvoient par cet identifiant, ce qui évite les déclarations d'établissement contradictoires
+      constatées dans l'audit. Il faut y mettre les coordonnées geo, les horaires (publiés nulle part aujourd'hui), une image et les liens sameAs (fiche Google, réseaux).
       L'Offer manque aussi, la grille étant publique. En revanche pas d'aggregateRating sur les avis Google, Google interdit le balisage d'avis collectés ailleurs.
       <span class="q">Détail complet dans l'onglet « données structurées, actions » de l'audit technique.</span>
     </div>
@@ -482,10 +487,12 @@ Les textes sont des exemples destinés à montrer le niveau de précision attend
 </div>
 
 <p class="hint" style="padding-bottom:50px;">
-Cinq blocs existants gardés tels quels, cinq blocs à renforcer, trois blocs nouveaux (bilan recalé sur la maquette de refonte du 17/08).
-Les trois blocs encore absents de la refonte sont la réponse directe, la désambiguïsation escape game et le maillage entre occasions.
+Cinq blocs existants gardés tels quels, cinq blocs à renforcer, trois blocs nouveaux (bilan recalé le 18/08 sur la page réellement en ligne, et non sur la maquette de refonte).
+Les trois blocs absents sont la réponse directe, la désambiguïsation escape game et le maillage entre occasions.
+Deux constats à retenir. Le contenu de la page est déjà bon, ce qui manque est presque entièrement du balisage et deux champs Yoast, donc du travail sans rédaction.
+Et la maquette de refonte, si elle est déployée telle quelle, ferait perdre le déroulé minuté aujourd'hui en ligne. À arbitrer avec David avant l'intégration.
 Pages à décliner sur ce gabarit : soirée d'entreprise (à défendre, absorbée dans team-building par la refonte), séminaire d'entreprise (1 900 rech./mois),
-afterwork (1 000), activité insolite à Paris, anniversaire (créée par la refonte, à enrichir), EVG / EVJF (créée par la refonte, à enrichir).
+afterwork (1 000), activité insolite à Paris, anniversaire et EVG / EVJF (prévues par la refonte mais toujours en 404 en ligne, donc bien à créer).
 Le champ escape game se joue sur la home (désambiguïsation) et sur l'article alternatives existant du blog, à transformer en page pilier.
 </p>
 
